@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+   {% extends 'base.html' %}
+   {% block content %}
+   <h1>Student Details</h1>
+   <table>
+    <thead>
+        <th>Student No</th>
+        <th>Student Name</th>
+        <th>Student class</th>
+        <th>Student address</th>
+    </thead>
+    <tr>
+        {% for st in student %}
+        <td>{{st.sno}}</td>
+        <td>{{st.sname}}</td>
+        <td>{{st.sclass}}</td>
+        <td>{{st.saddress}}</td>
+        <td><a href="#" ></a>Update</a><a href="/Delete/{{st.id}}"> Delete</a></td>
+    
+    </tr>
+    {% endfor %}
+    
+   
+   </table>
+   <a href="#"><button type="button"> Add new Student</button></a>
+   {% endblock %}
+
+</body>
+</html>

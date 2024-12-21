@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+      <div>
+        <div>
+          {% for room in rooms %}
+          <div>
+            <a href="{ % url 'createrom' %}">create room</a>
+            <h5>{{room.id}} --<a href="/room/{{room.id}}">{{room.name}}</a></h5>
+          </div>
+          {% endfor %}
+          {% block content %}
+          {% endblock content %}
+
+        </div>
+      </div>
+      
+     
+       <!-- As a heading -->
+    
+</body>
+</html>
